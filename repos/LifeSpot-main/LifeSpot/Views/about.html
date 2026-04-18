@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>LifeSpot - о проекте</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link href="/Static/CSS/index.css" rel="stylesheet" type="text/css">
+    <script src="/Static/JS/slider.js" defer></script>
+</head>
+<body>
+    <header id="header-index">
+        <h1>LifeSpot - о проекте</h1>
+        <p>На сайте собраны прямые трансляции из улиц разных городов мира.</p>
+        <p>Все трансляции находятся в открытых источниках, в данный момент - youtube.com.</p>
+
+        <p>Отзыв о работе сайта можно оставить здесь</p>
+    </header>
+
+    <div class="reviews">
+        <textarea id="comment-input" placeholder="Ваш отзыв..." rows="4" cols="50"></textarea>
+        <div class="review-button">
+            <button onclick="getComment()">Оставить отзыв</button>
+        </div>
+    </div>
+    <div id="comments-container" class="comments-container"></div>
+
+    <!-- СЛАЙДЕР -->
+    <section class="slider-section">
+        <h2>Галерея проекта</h2>
+
+        <div class="slider">
+            <div class="slider-track">
+                <div class="slide active">
+                    <img src="https://picsum.photos/id/1015/800/500" alt="Пейзаж с горой">
+                </div>
+                <div class="slide">
+                    <img src="https://picsum.photos/id/1018/800/500" alt="Горная долина">
+                </div>
+                <div class="slide">
+                    <img src="https://picsum.photos/id/104/800/500" alt="Водопад">
+                </div>
+                <div class="slide">
+                    <img src="https://picsum.photos/id/107/800/500" alt="Цветущий луг">
+                </div>
+                <div class="slide">
+                    <img src="https://picsum.photos/id/116/800/500" alt="Горное озеро">
+                </div>
+            </div>
+
+            <button class="slider-btn prev" aria-label="Предыдущий слайд">❮</button>
+            <button class="slider-btn next" aria-label="Следующий слайд">❯</button>
+            <div class="slider-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function getComment() {
+            const input = document.getElementById('comment-input');
+            const commentText = input.value.trim();
+
+            if (commentText === '') {
+                alert('Пожалуйста, введите текст отзыва');
+                return;
+            }
+
+            const container = document.getElementById('comments-container');
+            const newComment = document.createElement('div');
+            newComment.className = 'comment-item';
+            newComment.innerHTML = `
+                    <p><strong>${new Date().toLocaleString()}:</strong></p>
+                    <p>${commentText.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+                    <hr>
+                `;
+
+            container.prepend(newComment);
+            input.value = '';
+        }
+    </script>
+</body>
+</html>

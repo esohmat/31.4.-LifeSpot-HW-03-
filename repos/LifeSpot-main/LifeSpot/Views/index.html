@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>LifeSpot</title>
+    <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../Static/JS/index.js"></script>
+    <script>
+        handleSession(logger, checker);
+        const inputParseFunction = function () {
+            return document.getElementsByTagName('input')[0].value.toLowerCase();
+        }
+    </script>
+</head>
+<body>
+    <a href="/testing">testing</a>
+    <header id="header-index">
+        <h1>LifeSpot - прямые трансляции с улиц</h1>
+        <p>Покажем, что происходит прямо сейчас</p>
+        <input type="text"
+               style="width: 50%"
+               placeholder="Поиск..."
+               oninput="filterContent(this.value)">
+    </header>
+    <div class="bordered">
+        <div class="video-container">
+            <iframe width="560" height="315"
+                    src="https://rutube.ru/embed/4d3b588a9a7df617cd1f5f27f2a38b84/"
+                    title="Rutube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+            <h3 class="video-title">Нью-Йорк, Брайнт Парк</h3>
+        </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://rutube.ru/embed/live/746aa7922a210086f18daff094a5e63d/" title="Rutube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="video-title">Санкт-Петербург, Невский Проспект</h3>
+        </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://rutube.ru/embed/db0eb56f43b52543c6a47fc2b49b6309/" title="Rutube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="video-title">Лондон, автобусный маршрут</h3>
+        </div>
+    </div>
+    <footer>
+        <p>LifeSpot - видео трансляции</p>
+        <p>Связь с разработчиком: evmorgunov@yahoo.com</p>
+    </footer>
+</body>
+</html>
+

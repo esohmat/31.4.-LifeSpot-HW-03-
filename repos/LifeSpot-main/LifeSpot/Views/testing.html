@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>LifeSpot - Тестирование</title>
+    <link rel="icon" href=",">
+    <script src="/Static/JS/testing.js"></script>
+
+    <link href="/Static/CSS/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h2>Страница тестирования</h2>
+    <input type="text" id="testField" placeholder="Введите текст..." style="width: 50%;">
+    <button onclick="saveInput()">Сохранить</button>
+
+    <header id="header-index">
+        <h1>LifeSpot - тестовая страница</h1>
+        <p>Здесь можно экспериментировать с кодом</p>
+    </header>
+
+    <aside id="sidebar">
+        <div class="navbar">
+            <a href="/"><p>Трансляции</p></a>
+            <a href="/about"><p>О проекте</p></a>
+        </div>
+    </aside>
+
+    <footer>
+        <p>LifeSpot - видео трансляции</p>
+        <p>Связь с разработчиком: evmorgunov@yahoo.com</p>
+    </footer>
+
+    <script>
+        let userName = prompt("Пожалуйста, введите ваше имя");
+        if (userName) {
+            alert(`Приветствуем, ${userName}. В вашем имени ${userName.length} символов`);
+        }
+        console.log('Всего DOM-элементов:', document.getElementsByTagName('*').length);
+    </script>
+</body>
+</html>
